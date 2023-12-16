@@ -12,19 +12,11 @@ var tableStructure = new Schema({
       required: true,
       unique: true,
     },
-    test_scores: [
-      {
-        test_name: {
-          type: String,
-          enum: ['first_round', 'second_round', 'third_round'],
-        },
-        score: {
-          type: Number,
-          min: 0,
-          max: 10,
-        },
-      },
-    ],
+    id:{
+        type: Number,
+        required: true,
+        unique: true, 
+    }
   })
 
 var candidate = mongoose.model("Candidate",tableStructure)
